@@ -1,0 +1,366 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+@font-face {
+  font-family: primaryFont;
+  src: url(fonts/FRABK.TTF);
+}
+
+@media print {
+
+
+  /* target all pages */
+  @page {
+    size: A5;
+    margin:0cm;
+
+  }
+
+
+  /*
+  .page { page-break-after: always !important; } */
+
+}
+
+
+body {
+  font-size:25px;
+  font-family:arial;
+  display: table;
+  table-layout: fixed;
+  height: auto;
+}
+
+h1,h2,h3 {
+  font-family: primaryFont;
+}
+
+h2 {
+  text-align: left;
+}
+
+
+img {
+  max-width:100%;
+  object-fit:cover;
+}
+
+p {
+  margin-bottom:0.3cm;
+  text-align:justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.warning {
+  font-weight: bold;
+  text-align: center;
+  color:red;
+}
+
+/*represents a page: fixed size and no overflow, padding*/
+/*margin and background are removed when printed*/
+.page {
+  position:relative;
+  width:820px;
+  height:1161px;
+  padding:1cm;
+  padding-top:1.5cm;
+  box-sizing:border-box;
+  overflow:none;display: flex;
+  justify-content: center;
+  align-items: center;
+/* 
+  margin:10px auto;
+  background:#eee; */
+}
+
+.page .separator{
+
+  height:5px;
+  margin:5px 0;
+}
+
+/*fullpage with one image without border*/
+.fullpage.page {
+  padding:0 !important;
+}
+
+.fullpage.page:after,.fullpage.page:before {
+  display:none;
+}
+
+.fullpage.page img {
+  height:100%;
+  width:100%;
+  margin:none;
+  object-fit: cover;
+}
+
+/* .page:after {
+content:'after';
+position:absolute;
+bottom:0;
+} */
+
+/*category specific styles*/
+.page:before{
+  /* content:'before'; */
+  position:absolute;
+  top:0;
+  height:40px;
+  padding:10px 10px 0;
+  color:white;
+  font-family: primaryFont;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+.page.left:before {
+  left:1cm;
+}
+.page.right:before {
+  right:1cm;
+}
+
+/*martial arts*/
+.page.arts-martiaux:before,  .page.arts-martiaux .separator{
+  content:'arts martiaux';
+  background:#00aeef;
+}
+
+/*projections*/
+.page.projections:before, .page.projections .separator{
+  content:'projections';
+  background:#8178ca;
+}
+
+/*concerts*/
+.page.concerts:before, .page.concerts .separator{
+  content:'Concerts';
+  background:#820606;
+}
+
+/*animations*/
+.page.animations:before, .page.animations .separator{
+  content:'Animations';
+  background:#ffa92e;
+}
+
+/*jeuxvideos*/
+.page.jeuxvideos:before, .page.jeuxvideos .separator{
+  content:'Jeux videos';
+  background:#ffa92e;
+}
+
+/*conferences*/
+.page.conferences:before, .page.conferences .separator{
+  content:'Conférences';
+  background:#39b54a;
+}
+
+/*invites*/
+.page.invites:before, .page.invites .separator{
+  content:'Invités';
+  background:#39b54a;
+}
+
+/*ateliers*/
+.page.ateliers:before, .page.ateliers .separator{
+  content:'ateliers culturels';
+  background:#136448;
+}
+
+/*activitescontinues*/
+.page.activitescontinues:before, .page.activitescontinues .separator{
+  content:'activites continues';
+  background:#ec008c;
+}
+
+/*expositions*/
+.page.expositions:before, .page.expositions .separator{
+  content:'Expositions';
+  background:grey;
+}
+
+/*exposants*/
+.page.exposants:before, .page.exposants .separator{
+  content:'Exposants';
+  background:grey;
+}
+
+/*artistes*/
+.page.artistes:before, .page.artistes .separator{
+  content:'artistes';
+  background:grey;
+}
+
+/*restauration*/
+.page.restauration:before, .page.restauration .separator{
+  content:'restauration';
+  background:grey;
+}
+
+#sommaire{
+  font-size:1.5em;
+}
+
+#sommaire .line {
+  display:flex;
+  white-space: nowrap;
+}
+
+#sommaire .space {
+  width:100%;
+  border-bottom:3px dotted black;
+}
+
+#partners img,#sponsors img{
+  max-width: 30%;
+}
+
+#partners h2,#sponsors h2{
+  font-size: 1.8em;
+  border-bottom: solid 3px black;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+
+.premierssecours {
+  color:green;
+  font-weight: bold;
+  display:inline-block;
+  vertical-align: middle;
+  font-size: 1.3em;
+}
+img.premierssecours {
+  width:70px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+
+/*1 column*/
+.col1 {
+
+}
+
+.col1 img {
+  width:100%;
+  object-fit:cover;
+  height:200px;
+  margin-bottom:10px;
+}
+
+/*2 columns*/
+.col2 {
+  display:inline-block;
+  vertical-align:top;
+  width:49.5%;
+  text-align:justify;
+}
+
+.col2 img {
+  height:25%;
+  width:95%;
+  object-fit: cover;
+}
+
+/*3 columns*/
+.col3 {
+  display:inline-block;
+  vertical-align:top;
+  width:31%;
+  padding:0.8%;
+  text-align:justify;
+}
+
+.col3 img {
+  height:200px;
+  width:100%;
+  object-fit: cover;
+}
+
+.projections .col3 img {
+  height:140px;
+}
+
+.col3 p {
+  padding:1%;
+}
+
+h4 {
+  font-weight:bold;
+  display:block;
+  text-align:center;
+  text-transform: uppercase;
+  font-family: primaryFont;
+}
+
+/* .room:before{content:"("} */
+.room {
+  font-size: 0.7em;
+  display:block;
+  color:white;
+  text-align: center;
+  text-transform: uppercase;
+  padding:3px 0;
+  background: blue;
+  font-weight: bold;
+}
+
+h2 .room {
+  width:auto;
+  display:inline;
+  padding:3px 10px;
+  float:right;
+}
+
+.col2 .room {
+  width:95%;
+}
+/* .room:after{content: :")"} */
+
+/*page number styles*/
+div.pagenb{
+  width:200px;
+  position:absolute;
+  bottom:0.5cm;
+}
+
+div.pagenb.right {
+  right:1cm;
+}
+
+div.pagenb.left {
+  left:1cm;
+}
+
+div.pagenb img {
+  width:100%;
+}
+
+strong.pagenb {
+  display:block;
+  width:50px;
+  /* background:yellow; */
+  text-align:center;
+  position:absolute;
+  top:25%;
+}
+
+.right strong.pagenb {
+  right:2px;
+}
+.left strong.pagenb {
+  left:2px;
+}
