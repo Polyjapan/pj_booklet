@@ -35,10 +35,16 @@ body {
 
 h1,h2,h3 {
   font-family: primaryFont;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 h2 {
   text-align: left;
+  font-size: 1.1em;
 }
 
 
@@ -54,6 +60,7 @@ p {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+  font-size: 0.8em;
 }
 
 .text-center{
@@ -75,10 +82,11 @@ p {
   padding:1cm;
   padding-top:1.5cm;
   box-sizing:border-box;
-  overflow:none;display: flex;
+  overflow:none;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-/* 
+  align-items: center; */
+/*
   margin:10px auto;
   background:#eee; */
 }
@@ -86,12 +94,24 @@ p {
 .page .separator{
 
   height:5px;
-  margin:5px 0;
+  margin:15px 0;
 }
 
 /*fullpage with one image without border*/
 .fullpage.page {
   padding:0 !important;
+}
+
+.page.fullpage.zones {
+  /* text-align:  */
+}
+
+.page.fullpage.zones img{
+  width:90%;
+  height:auto;
+  object-fit: contain;
+  display: block;
+  margin: auto;
 }
 
 .fullpage.page:after,.fullpage.page:before {
@@ -149,6 +169,14 @@ bottom:0;
   background:#820606;
 }
 
+ .page.concerts .separator {
+   margin:20px 0;
+ }
+
+.page.concerts div div img  {
+  height:300px;
+}
+
 /*animations*/
 .page.animations:before, .page.animations .separator{
   content:'Animations';
@@ -194,19 +222,19 @@ bottom:0;
 /*exposants*/
 .page.exposants:before, .page.exposants .separator{
   content:'Exposants';
-  background:grey;
+  background:darkblue;
 }
 
 /*artistes*/
 .page.artistes:before, .page.artistes .separator{
   content:'artistes';
-  background:grey;
+  background:#bde67c;
 }
 
 /*restauration*/
 .page.restauration:before, .page.restauration .separator{
   content:'restauration';
-  background:grey;
+  background:black;
 }
 
 #sommaire{
@@ -223,8 +251,13 @@ bottom:0;
   border-bottom:3px dotted black;
 }
 
+#partners, #sponsors {
+}
+
 #partners img,#sponsors img{
   max-width: 30%;
+    display:inline-block;
+    vertical-align: middle;
 }
 
 #partners h2,#sponsors h2{
@@ -257,7 +290,7 @@ img.premierssecours {
 .col1 img {
   width:100%;
   object-fit:cover;
-  height:200px;
+  height:240px;
   margin-bottom:10px;
 }
 
@@ -270,9 +303,9 @@ img.premierssecours {
 }
 
 .col2 img {
-  height:25%;
+  //height:25%;
   width:95%;
-  object-fit: cover;
+  //object-fit: cover;
 }
 
 /*3 columns*/
@@ -304,6 +337,7 @@ h4 {
   text-align:center;
   text-transform: uppercase;
   font-family: primaryFont;
+  font-size: 0.8em;
 }
 
 /* .room:before{content:"("} */
@@ -318,7 +352,7 @@ h4 {
   font-weight: bold;
 }
 
-h2 .room {
+h2 .room,h1 .room {
   width:auto;
   display:inline;
   padding:3px 10px;

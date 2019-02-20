@@ -13,8 +13,8 @@ $(document).ready(function(){
     alt: 'right number'
   }
 
-  $currentImg = $imgR;
-  $startPage = "right";
+  $currentImg = $imgL;
+  $startPage = "left";
 
   $css = {
     left : {
@@ -40,7 +40,7 @@ $(document).ready(function(){
       $pagenb = $("<div>",{class:"pagenb "+$startPage});
       $pagenb.append($("<img />", $currentImg));
 
-      $pagenb.append($("<strong>", {class:"pagenb"}).append(index));
+      $pagenb.append($("<strong>", {class:"pagenb"}).append(index+$indent));
 
       $(this).append($pagenb)
     }
@@ -52,6 +52,7 @@ $(document).ready(function(){
     // sommaire
     $class = $.trim($(this).attr("class").replace('fullpage','').replace('page','').replace('right','').replace('left',''));
     if($currentClass != $class && $class!=""){
+      console.log($class)
       $text = "";
       switch($class){
         case "ateliers":
@@ -63,6 +64,12 @@ $(document).ready(function(){
         case "activitescontinues":
         $text = "Activités continues"
 
+        break;
+        case "artistes":
+        $text = "Artistes";
+        break;
+        case "restauration":
+        $text = "Restaurations";
         break;
         case "animations":
         $text = "Animations"
@@ -88,6 +95,9 @@ $(document).ready(function(){
         case "invites":
         $text = "Invités"
         break;
+        case "zones":
+        $text = "Zones";
+        break;
         default:
         $text = "default";
         break;
@@ -107,9 +117,9 @@ $(document).ready(function(){
   // room color
   $(".room").each(function(index){
     $color = "";
-    // console.log($(this).text().toLowerCase())
-    switch($(this).text().toLowerCase()){
-      case "usagi": case "tanuki": case "kitsune":
+
+    switch($.trim($(this).text().toLowerCase())){
+      case "usagi": case "tanuki": case "kitsune":case "zone violette":
       $color = "purple";
       break;
       case "haru": case "aki":case  "natsu":case  "uki":
@@ -125,7 +135,7 @@ $(document).ready(function(){
       $color = "red";
       break;
     }
-
+    // console.log($(this).text().toLowerCase() + $color)
     $(this).css("background",$color);
 
   });
