@@ -1,12 +1,14 @@
 # pj_booklet
 Japan Impact HTML booklet (to be printed)
 
-Features:
-- Japanese reading direction
+Automatic Features:
+- category bookmarks
+- room colors
+- table of contents
 - page numbering
-- category bookmark
-- automatic color rooms
 
-![screenshot homepage](https://i.imgur.com/YxbjFle.png)
+Warning: japanese reading direction
 
-![screenshot automatic schedule plan](https://i.imgur.com/4A87dBp.jpg)
+![screenshot cover toc](https://i.imgur.com/4Ov6KbQ.png)
+
+![screenshot pages](https://i.imgur.com/EFa0YUS.png)
